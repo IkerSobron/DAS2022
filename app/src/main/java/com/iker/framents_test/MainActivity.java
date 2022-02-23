@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity implements AlumnListFragment
     public String[] cargarElementos() {
         String [] s = new String[a.size()];
         int i = 0;
-
         for (Alumno al : a)
             s[i++] = al.toString();
 
