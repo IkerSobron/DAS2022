@@ -12,7 +12,7 @@ public class SecondActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
-        Context c;
+//        Context c;
         AlumnInfoFragment elotro = (AlumnInfoFragment)getSupportFragmentManager().findFragmentById(R.id.segundoFragment);
         String n = getIntent().getStringExtra("nombre");
         String a = getIntent().getStringExtra("apellido");
