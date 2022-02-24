@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.util.Log;
 
 import java.util.ArrayList;
 
@@ -21,6 +22,16 @@ public class MainActivity extends AppCompatActivity implements AlumnListFragment
         a.add(new Alumno("Miren", "Murua", "22"));
         a.add(new Alumno("Itxaso", "Ortiz de Urbina", "23"));
         a.add(new Alumno("Alaia", "Salaberria", "24"));
+
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            String n= extras.getString("nombre");
+            String a= extras.getString("apellido");
+            String e= extras.getString("edad");
+            AlumnInfoFragment elotro = (AlumnInfoFragment) getSupportFragmentManager().findFragmentById(R.id.segundoFragment);
+            elotro.actualizarDatos(n, a, e);
+            Log.d("prueba", "onCreate: "+ n);
+        }
     }
 
     @Override
